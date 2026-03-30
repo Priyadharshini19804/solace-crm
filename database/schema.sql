@@ -20,3 +20,8 @@ CREATE TABLE IF NOT EXISTS agents (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+ALTER TABLE agents
+  MODIFY status ENUM('Pending','Assigned','Active','Completed','Closed','Cancelled')
+  NOT NULL DEFAULT 'Pending';
+
